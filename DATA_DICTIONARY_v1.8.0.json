@@ -1,0 +1,30 @@
+{
+  "synthetic_neural_data_v1.8.0_panel_labeled_epochs.csv": {
+    "description": "Multi-neuron panel (N=32) with inhibitory and excitatory epochs labeled; T=2000 ms.",
+    "columns": {
+      "neuron_id": "Integer neuron identifier (1..32)",
+      "time_ms": "Simulation time in milliseconds",
+      "membrane_potential_mV": "Membrane potential (mV) clipped [-80, 50]",
+      "firing_rate_Hz": "Firing rate (Hz) rectified and smoothed; clipped [0, 60]",
+      "phase_radians": "Oscillatory phase in radians, [0, 2\u03c0)",
+      "synaptic_current_nA": "Synaptic current (nA), clipped [-0.02, 0.12]",
+      "perturbation_flag": "1 during inhibitory window (500\u2013700 ms), else 0",
+      "epoch_label": "Categorical label for epoch segment"
+    }
+  },
+  "qc_epoch_correlations_v1.8.0.csv": {
+    "description": "Per-neuron Pearson r between Vm and FR, computed within each epoch.",
+    "columns": {
+      "neuron_id": "Integer neuron identifier",
+      "epoch": "Epoch label",
+      "start_ms": "Epoch start time (ms)",
+      "end_ms": "Epoch end time (ms)",
+      "pearson_r_vm_fr": "Correlation coefficient Vm vs FR",
+      "n_samples": "Sample count in epoch"
+    }
+  },
+  "neuron_param_manifest_v1.7.0.(csv|json)": {
+    "description": "Per-neuron physiology parameters and perturbation strengths used in v1.7.0 generation.",
+    "notes": "Relevant for understanding parameter priors used in v1.8.0 base."
+  }
+}
